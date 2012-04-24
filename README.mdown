@@ -2,12 +2,15 @@
 
 winrmate is a windows-friendly version of rmate, the remote editing utility for TextMate.
 
-This script can be compiled to a 1k self-contained binary using Ocra,  and the resulting executable supports drag and drop (and could probably even be set as Window's default editor!)
+This script can be compiled to a 1k self-contained binary using Ocra, and the resulting executable supports drag and drop and works in the Windows "Open With..." menu.
+
+Compiling it is really easy: ocra winr.rbw
 
 # Notes
 
 This script makes use of two environment variables, the same as rmate:
-> RMATE_HOST
-> RMATE_PORT
+
+* RMATE_HOST
+* RMATE_PORT
 
 These can be set as user variables in the Advanced System Properties -> Environment Variables menu.
