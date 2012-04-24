@@ -11,7 +11,7 @@ require 'socket'
 require 'fileutils'
 require 'rubygems'
 
-VERSION_STRING = 'rmate version 1.3 (2011-10-18)'
+VERSION_STRING = 'wirmate version 0.1 (2012-04-23)'
 
 class Settings
   attr_accessor :host, :port, :wait, :force, :verbose
