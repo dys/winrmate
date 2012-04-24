@@ -162,7 +162,7 @@ unless $settings.wait
 #  Process.detach(pid)
   quoted_args = ARGV.inject(""){|accum, arg| accum + %Q{ "#{arg}"}}
   puts %Q{#{$0} -w #{quoted_args}}
-  system ("start /min rubyw #{$0} -w #{quoted_args}")
+  system ("start rubyw #{$0} -w #{quoted_args}")
 else
   connect_and_handle_cmds($settings.host, $settings.port, cmds)
 end
