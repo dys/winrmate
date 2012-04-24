@@ -4,8 +4,6 @@
 $VERBOSE = true                         # -w
 $KCODE   = "U" if RUBY_VERSION < "1.9"  # -KU
 
-### TEST TEST 2
-
 require 'optparse'
 require 'socket'
 require 'fileutils'
@@ -156,12 +154,7 @@ ARGV.each do |path|
 end
 
 unless $settings.wait
-#  pid = fork do
-#    connect_and_handle_cmds($settings.host, $settings.port, cmds)
-#  end
-#  Process.detach(pid)
   quoted_args = ARGV.inject(""){|accum, arg| accum + %Q{ "#{arg}"}}
-  puts %Q{#{$0} -w #{quoted_args}}
   system ("start rubyw #{$0} -w #{quoted_args}")
 else
   connect_and_handle_cmds($settings.host, $settings.port, cmds)
