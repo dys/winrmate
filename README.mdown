@@ -4,7 +4,9 @@ winrmate is a windows-friendly version of rmate, the remote editing utility for 
 
 This script can be compiled to a 1k self-contained binary using Ocra, and the resulting executable supports drag and drop and works in the Windows "Open With..." menu.
 
-Compiling it is really easy: ocra winr.rbw
+Compiling it is really easy: *ocra winr.rbw*
+
+Find Ocra here: http://ocra.rubyforge.org/
 
 # Notes
 
@@ -14,3 +16,7 @@ This script makes use of two environment variables, the same as rmate:
 * RMATE_PORT
 
 These can be set as user variables in the Advanced System Properties -> Environment Variables menu.
+
+# Details
+
+The original version of rmate uses fork and detach. On windows, I was unable to get a version of fork that would behave and I couldn't find any version of detach. The solution winrmate uses instead is to call the script using system("start ruby winr -w"), which spawns a new process that will wait in the background until editing in textmate is complete.
